@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import { client } from './lib/client';
 
-function App() {
+function App({products}) {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>{products.name}</h1>
     </div>
+   
   );
-}
+  }
+
+  export const getServerSideProps = async () => {
+    const query = '*[_type == "product"]';
+    const products = await client.fetch(query);
+  
+    return {
+      props: { products }
+    }
+  }
 
 export default App;
