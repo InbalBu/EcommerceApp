@@ -2,10 +2,9 @@ import './App.css';
 import React from "react";
 import { client } from './lib/client';
 import { useEffect,useState } from 'react';
-function App({products}) {
+function App() {
 
 const[storeProducts,setStoreProducts]=useState([]);
-const [singleProduct,setSingleProduct]=useState("");
 // useEffect(() => {
 //   const profileImg=JSON.parse(localStorage.getItem("profileImg"));
 //    const userFound=JSON.parse(localStorage.getItem("user"));
@@ -38,20 +37,20 @@ const [singleProduct,setSingleProduct]=useState("");
    getProducts();
  }, [])
 
-function getName()
+async function getName()
 {
   const product=JSON.parse(localStorage.getItem("storeProducts"));
-  setSingleProduct(product[0].price);
+  setStoreProducts(Array.from(product).map((singleProduct)=>singleProduct.name   ));
 }
-// useEffect(() => {
-//   const storeProducts= localStorage.getItem("storeProducts");
-//   setProducts(JSON.parse(storeProducts));
-// },product)
+//  useEffect(() => {
+//   const product=JSON.parse(localStorage.getItem("storeProducts"));
+//   setStoreProducts(Array.from(product).map((producti)=>producti.name));
+//  },storeProducts)
 
   return (
     <div className="App">
     <h1 onClick={getName}>hello</h1>
-    <h1>{singleProduct}</h1>
+    <h1>{storeProducts}</h1>
     </div>
    
   );
