@@ -1,0 +1,45 @@
+.meauto {
+    height: 100px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    display: flex;
+}
+.SearchIcon
+{
+    font-size: 45px !important;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 210px;    
+}
+.SearchPerson
+{
+    font-size: 45px !important;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 140px;    
+}
+.ShoppingBagIcon
+{
+    font-size: 45px !important;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 70px;    
+}
+
+
+.navLink
+{
+    font-size: 17px !important;
+    margin-left: 20px !important;
+    color: black !important;
+}
+
+.logo {
+    font-size: 30px !important;
+    font-weight: 400;
+}

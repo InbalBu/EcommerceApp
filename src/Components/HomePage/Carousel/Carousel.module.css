@@ -1,0 +1,22 @@
+.Carousel  {
+    display: flex;
+    justify-content: end;
+  text-align: end;
+   
+}
+
+.carouselHeader
+{
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: capitalize;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-40%, -470%);
+}
+.carouselItem
+{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
+}

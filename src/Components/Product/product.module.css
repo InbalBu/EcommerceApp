@@ -1,0 +1,55 @@
+.cardBody {
+    padding-top: 30px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.productHeader
+{
+    flex-wrap: wrap;
+    word-wrap: break-word;
+
+    padding-top: 25px;
+    text-align: start;
+    font-size: 18px;
+}
+.sizes span
+{
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: black;
+}
+.sizes span:hover
+{
+    
+    color: blue;
+    transition: 0.3s;
+}
+.price
+{
+    margin-top: 10px;
+    text-align: start;
+}
+
+
+.btn
+{
+    cursor: pointer;
+    margin-left: 55px;
+    margin-top: 30px;
+    height: 40px;
+
+}
+.leftdiv
+{
+    flex-wrap: wrap;
+   
+
+}
+.details {
+    height: 100px;
+    width: 100%;
+    display: flex;
+}

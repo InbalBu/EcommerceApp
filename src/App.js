@@ -2,6 +2,16 @@ import './App.css';
 import React from "react";
 import { client } from './lib/client';
 import { useEffect,useState } from 'react';
+import Homepage from './Components/HomePage/Homepage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+
 function App() {
 
 const[storeProducts,setStoreProducts]=useState([]);
@@ -27,9 +37,13 @@ async function getName()
 
   return (
     <div className="App">
-    <h1 onClick={getName}>hello</h1>
-    <h1>{storeProducts}</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={ <Homepage/> } /> 
+    </Routes>
+  </div>
+    // <div className="App">
+    //   <Homepage/>
+    // </div>
    
   );
   }
