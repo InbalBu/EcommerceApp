@@ -16,6 +16,12 @@
     top: 50%;
     transform: translate(-40%, -470%);
 }
+@media screen and (max-width:900px) {
+    .carouselHeader
+    {
+        visibility: collapse;
+    }
+}
 .carouselItem
 {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
