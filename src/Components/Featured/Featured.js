@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { client } from '../../lib/client';
 import Product from '../Product/Product';
+import { Grid } from '@mui/material';
 const Featured = () => {
   
   const [products,setProducts]=useState([]);
@@ -24,19 +25,22 @@ const Featured = () => {
     }
     getProducts();
   }, [])
+
   function setProduct()
 {
-  
-  console.log(products);
-  //  const products=JSON.parse(localStorage.getItem("storeProducts"));
-  // setProducts(Array.from(products).map((singleProduct)=><Product Img={singleProduct.image.asset.url} title={singleProduct.name} 
-  //  price={singleProduct.price}></Product>  ));
-  
+   setProducts(Array.from(JSON.parse(products).map((singleProduct)=><Grid item xs={12}  md={6} lg={4}><Product Img={singleProduct.image.asset.url} title={singleProduct.name}/> </Grid>)));
 }
   return (
     <div>
     <h1 onClick={setProduct}>FEATURED PRODUCTS</h1>
-      {/* {products} */}
+    <Grid 
+     alignItems="center"
+    justify="center" 
+    style={{ minHeight: "100vh" }}
+    container>
+    {products}
+
+    </Grid>
 
 
     </div>

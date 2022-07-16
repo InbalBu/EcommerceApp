@@ -11,7 +11,7 @@ import styles from './product.module.css'
 const Product = (props) => {
   
   return (
-    <Card style={{ width: '18rem', "margin-top":"100px" , "margin-left":"400px", "margin-bottom":"100px" }}>
+    <Card style={{ width: '18rem', "margin-top":"100px" ,"marginLeft":"20%", "margin-bottom":"100px" }}>
     <Card.Img 
        src={props.Img}
      />
