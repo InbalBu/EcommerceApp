@@ -1,17 +1,13 @@
 import ShoppingBag from '@mui/icons-material/ShoppingBag';
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import { client } from '../../lib/client';  
-import imageUrlBuilder from '@sanity/image-url'
-import { urlFor } from '../../lib/client';
-import shoes4 from '../HomePage/Carousel/shoes4.jpg'
+import Card from 'react-bootstrap/Card'
 import styles from './product.module.css'
 
 const Product = (props) => {
   
   return (
-    <Card style={{ width: '18rem', "margin-top":"100px" ,"marginLeft":"20%", "margin-bottom":"100px" }}>
+    <Card style={{ width: '18rem', "marginTop":"15px" ,"marginLeft":"10%", "marginButtom":"100px" }}>
     <Card.Img 
        src={props.Img}
      />
@@ -20,7 +16,7 @@ const Product = (props) => {
       <div className={styles.details}>
       <div  className={styles.leftdiv}>
       <Card.Title className={styles.productHeader}>{props.title}</Card.Title>
-      <Card.Text className={styles.price}>{props.price}</Card.Text>
+      <Card.Text className={styles.price}>{props.price} $</Card.Text>
       </div>
     <Button className={styles.btn} variant="primary" >
         <ShoppingBag/>

@@ -1,7 +1,5 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import styled from 'styled-components';
-import shoes from './shoes.jpg'
 import shoes2 from './shoes2.jpg'
 import shoes3 from './shoes3.jpeg'
 import shoes4 from './shoes4.jpg'
