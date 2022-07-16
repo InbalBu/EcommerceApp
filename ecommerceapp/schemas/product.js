@@ -6,8 +6,7 @@ export default {
       {
         name: 'image',
         title: 'Image',
-        type: 'array',
-        of: [{ type: 'image' }],
+        type: 'image',
         options: {
           hotspot: true,
         }
@@ -36,5 +35,11 @@ export default {
         title: 'Details',
         type: 'string',
       }
-    ]
+    ],
+    preview: {
+      select: {
+        title: 'title',
+        media: 'mainImage',
+      }
+    }
   }
