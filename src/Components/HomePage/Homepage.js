@@ -3,6 +3,7 @@ import NavbarComponent from '../Navbar/NavbarComponent'
 import MyCarousel from './Carousel/MyCarousel.js'
 import Featured from '../Featured/Featured'
 import Newsletter from '../Newsletter/Newsletter'
+import Footer from '../Footer/Footer'
 const Homepage = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const Homepage = () => {
     <MyCarousel/>
     <Featured/>
     <Newsletter/>
+    <Footer/>
    
     </div>
   )
