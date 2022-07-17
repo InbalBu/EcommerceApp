@@ -1,16 +1,97 @@
-.introheader {
-	color: #f8f8f8;
-	text-align: center;
+.Newsletter_Div
+{
+	width: 100%;
+	background-color:#1368f1 ;
+	height: 140px;
+	display: flex;
+}
+.Discound_Div
+{
+	font-weight: 500;
+	margin-top: 30px;
+	margin-left: 5%;
+	width: 40%;
 }
 
-.container{
-margin-top:150px;
-background-color:#00bfff;
-width:100%;
-position:absolute;
-height:220px;
+.Discound_Div h1
+{
+	color: white;
+	font-weight: 700;
+	font-size: 27px;
+	text-align: start;
 }
-.custom-tab-content{
-color:#fff;
-font-family: 'Open Sans', sans-serif;
+
+.Discound_Div h3
+{
+	color: white;
+	text-align: start;
+	font-weight: 500;
+	font-size: 20px;
 }
+.Email_Div
+{
+	width: 45%;
+	margin-left: 200px;
+	display: flex;
+	align-items: center;
+	align-content: center;
+}
+
+.Form input{
+	width: 350px;
+	border: 1px solid #fff;
+	padding: 10px;
+	height: 45px;
+	background-color: transparent;
+}
+
+.Form button {
+	color: #1368f1;
+	background-color: white;
+	border: none;
+	outline: none;
+	height: 45px;
+	width: 160px;
+	font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.Newsletter_Div
+	{
+	width: 100%;
+	background-color:#1368f1 ;
+	height: 140px;
+	display: flex;
+	margin-top: 30px;
+	}
+
+	.Email_Div {
+		margin-left: 20px;
+	}
+
+	.Form input{
+		width: 200px;
+		border: 1px solid #fff;
+		padding: 10px;
+		height: 45px;
+		background-color: transparent;
+	}
+	
+	.Form button {
+		margin-top: 15px;
+		color: #1368f1;
+		background-color: white;
+		border: none;
+		outline: none;
+		height: 35px;
+		width: 120px;
+		font-size: 15px;
+	}
+
+	.Discound_Div h3
+	{
+	display: none;
+	}
+	
+  }

@@ -11,14 +11,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavbarComponent = () => {
   return (
+   
     
 <Navbar className={styles.meauto} expand="lg">
       <Container>
         <Navbar.Brand className={styles.logo} href="/">Shoe Store</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="nav">
-            <Nav.Link className={styles.navLink} href="#home">Sales</Nav.Link>
+
+        <Navbar.Toggle  aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse  id="basic-navbar-nav">
+        <div className={styles.overflow}>
+
+          <Nav className='nav'>
+          <Nav.Link className={styles.navLink} href="#home">Sales</Nav.Link>
             <Nav.Link  className={styles.navLink} href="#link">Sneakers</Nav.Link>
             <Nav.Link  className={styles.navLink} href="#link">Shoes</Nav.Link>
             <NavDropdown className={styles.navLink} title="Accesories" id="basic-nav-dropdown">
@@ -31,9 +36,15 @@ const NavbarComponent = () => {
           <SearchIcon className={styles.SearchIcon}/>
           <SearchPerson  className={styles.SearchPerson}/>
           <ShoppingBagIcon className={styles.ShoppingBagIcon} />
+
           </Nav>
+          </div>
+
         </Navbar.Collapse>
+
       </Container>
+
+      
     </Navbar>
   )
 }

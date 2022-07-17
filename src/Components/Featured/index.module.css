@@ -5,3 +5,9 @@
     font-weight: bold;
     margin-bottom: 20px;
 }
+.grid
+{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
