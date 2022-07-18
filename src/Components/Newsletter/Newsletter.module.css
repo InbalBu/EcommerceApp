@@ -44,6 +44,10 @@
 	height: 45px;
 	background-color: transparent;
 }
+Form input::placeholder
+{
+	color: white;
+}
 
 .Form button {
 	color: #1368f1;
