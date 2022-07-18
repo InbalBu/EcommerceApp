@@ -56,7 +56,8 @@
   }
   
   .footer .col ul li:hover {
-    color:black;
+    background-color: transparent;
+    color: black;
     transition: .1s;
     -webkit-transition: .1s;
     -moz-transition: .1s;

@@ -6,10 +6,9 @@ import SinglePageProduct from "./SinglePageProduct.js"
 import shoes2 from './shoes2.jpg'
 import {useLocation}  from 'react-router-dom'
 
-const Productpage = (props) => {
+const Productpage = () => {
   const location =useLocation();
   return (
-    <>
     <div>
         <NavbarComponent/>
        <SinglePageProduct
@@ -23,7 +22,7 @@ const Productpage = (props) => {
         <Newsletter/>
         <Footer/>
     </div>
-    </>
+    
   )
 }
 

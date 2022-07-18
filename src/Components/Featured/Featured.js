@@ -7,18 +7,14 @@ import Product from '../Product/Product';
 import { Grid } from '@mui/material';
 import styles from './index.module.css'
 const Featured = () => {
+  const navigate =useNavigate();
 
-  const navigate =useNavigate()
    function moveToProductPage(singleProduct)
   {
      {singleProduct.title&&navigate("/product",{state:{name:singleProduct.title,price:singleProduct.price,img:singleProduct.img}});}
   }
-
-  
-
   //#region SetProductss
   const [products,setProducts]=useState();
-  
   useEffect(() => {
     const getProducts = async () => {   
      const query= `*[_type == "product"] {
