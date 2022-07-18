@@ -3,8 +3,23 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import styles from './product.module.css'
-
+import {useNavigate, BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Productpage from '../ProductPage/Productpage';
+import { useState } from 'react';
 const Product = (props) => {
+
+  const[product,setProduct]=useState({});
+  function moveToProductPage()
+  {
+    setProduct(
+    {
+      "title":props.title,
+      "img":props.Img,
+      "price":props.price,
+      "desc":props.desc
+    })
+    props.moveToProductPage(product);
+  }
   
   return (
     <Card style={{ width: '18rem', "marginTop":"15px" ,"marginLeft":"10%", "marginButtom":"100px" }}>
@@ -18,13 +33,14 @@ const Product = (props) => {
       <Card.Title className={styles.productHeader}>{props.title}</Card.Title>
       <Card.Text className={styles.price}>{props.price} $</Card.Text>
       </div>
-    <Button className={styles.btn} variant="primary" >
+    <Button onClick={moveToProductPage} className={styles.btn} variant="primary">
         <ShoppingBag/>
     </Button>
       </div>
-       
     </Card.Body>
   </Card>
+
+  
 
 
     
