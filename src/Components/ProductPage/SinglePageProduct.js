@@ -40,7 +40,6 @@ const SinglePageProduct = (props) => {
                     <button className={styles.plusBtn}>+</button>
                     <p>1</p>
                     <button className={styles.minusBtn}>-</button>
-
                  </div>
                 <div className={styles.add}>
                     <button>

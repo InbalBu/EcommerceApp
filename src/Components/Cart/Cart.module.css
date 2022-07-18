@@ -1,0 +1,137 @@
+.cartContainer
+{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    top: 0;
+    right: 0;
+    z-index: 1;
+     width:25%;
+     position: fixed;
+     height: 100vh;
+    background-color: white;
+    transition: top 300ms ease 0s !important;
+ }
+.closeButton
+{
+    margin-right: 30px; 
+    margin-top: 15px;
+    margin-left: auto;
+    cursor: pointer;
+    
+}
+.cart
+{
+    border-bottom: 1px solid lightgray;
+    margin-left:25px;
+    margin-top: 40px;
+    text-align: start;
+    display: flex;
+
+
+}
+
+.heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+    
+}
+
+.productContainer h5 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: -70px;
+    margin-left: 50px;
+}
+.productContainer p {
+    margin-top: -5px;
+    font-weight: bold;
+    margin-left: -25px;
+}
+
+.productContainer img {
+    height: 40%;
+    width: 30%;
+    display: flex;
+    margin-left: 25px;
+    margin-top: 40px;
+   
+}
+
+.productContainer h4 {
+    margin-top: -10px;
+    margin-left: -30px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.quantity
+{
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   margin-top: 30px;
+   border-bottom:1px solid rgba(0, 0, 0, 0.3);
+}
+.plusBtn
+{
+     border: none;
+     background-color: transparent;
+     text-align: end;
+     height: 30px;
+     width: 30px;
+     font-size: 20px;
+     text-align: center;
+     margin-right: 10px;
+}
+.minusBtn
+{
+     border: none;
+     background-color: transparent;
+     text-align: start;
+     font-size: 20px;
+     height: 30px;
+     width: 30px;
+     text-align: center;
+     margin-left: 10px;
+}
+
+.quantity p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+.quantity h4
+{
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+.removeItem {
+    text-align: right;
+    margin-top: -45px;
+    margin-right: 20px;
+    cursor: pointer;
+    
+}
+
+.totalPrice h1{
+    font-size: 24px;
+    margin-top: 250px;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+.checkout button {
+    margin-top: 20px;
+    font-size: 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 17px;
+    width: 350px;
+    letter-spacing: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

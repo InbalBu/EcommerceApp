@@ -7,18 +7,21 @@ import {useNavigate, BrowserRouter as Router, Route, Link } from "react-router-d
 import Productpage from '../ProductPage/Productpage';
 import { useState } from 'react';
 const Product = (props) => {
-
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
   const[product,setProduct]=useState({});
-  function moveToProductPage()
+    function moveToProductPage(event) 
   {
-    setProduct(
+    event.preventDefault();
+     setProduct(
     {
       "title":props.title,
       "img":props.Img,
       "price":props.price,
       "desc":props.desc
-    })
-    props.moveToProductPage(product);
+    })    
+      props.moveToProductPage(product);
   }
   
   return (
