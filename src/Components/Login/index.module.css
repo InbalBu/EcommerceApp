@@ -17,32 +17,21 @@
     margin-top: -80px;
     
 }
-.registerUserName
-{
-    margin-left: 10%;
-    margin-right: auto;
 
-    text-align: start;
-    display: start;
-}
-.registerUserName input
-{
-    margin-left: 35px;
-}
-.registerUserEmail {
+.LoginUserEmail {
     margin-left: 10%;
     margin-right: auto;
     text-align: start;
     display: start;
 }
-.registerUserEmail input
+.LoginUserEmail input
  {
     margin-left: 37px;
     
 }
 
 
-.registerUserPassword {
+.LoginUserPassword {
     margin-left: 10%;
     margin-right: auto;
     text-align: start;
@@ -50,13 +39,13 @@
 
 }
 
-.registerUserName p {
+.LoginUserName p {
     display: inline-flex;
     margin-right: 20px;
     font-size: 24px;
 }
 
-.registerUserPassword p {
+.LoginUserPassword p {
     display: inline-flex;
     margin-right: 20px;
     font-size: 24px;
@@ -66,21 +55,16 @@
 
 }
 
-.registerUserEmail p {
+.LoginUserEmail p {
     display: inline-flex;
     margin-right: 20px;
     font-size: 24px;
+
 }
 
-.error
-{
-    color: red;
-    font-size: 18px;
-    
-}
 .btn {
     margin-left: 30px;
-    margin-top: 40px;
+    margin-top: 80px;
     background-color: black;
     color: #fff;
     border: none;
@@ -102,14 +86,7 @@
     margin-right: auto;
 }
 
-.notSignedUp {
-    padding-top: -30px;
-}
-
 .notSignedUp a{
     color: black;
-    
 }
-
-
 
