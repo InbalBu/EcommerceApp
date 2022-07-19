@@ -2,13 +2,12 @@ import './App.css';
 import React from "react";
 import { useState } from 'react';
 import Productpage from './Components/ProductPage/Productpage';
-import {Homepage,RegisterPage} from "../src/pages/pages";
+import {Homepage,RegisterPage,LoginPage} from "../src/pages/pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Routes,
   Route
 } from "react-router-dom";
-
 export const StoreContext = React.createContext();
 
 
@@ -24,6 +23,7 @@ function App() {
     <Route path="/" element={ <Homepage/> } /> 
      <Route path="/product" element={ <Productpage/> } />  
      <Route path="/register" element={ <RegisterPage/> } />  
+     <Route path="/login" element={ <LoginPage/> } />  
 
      </Routes>
      

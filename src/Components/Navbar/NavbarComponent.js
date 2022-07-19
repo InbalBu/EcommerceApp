@@ -10,12 +10,18 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Badge from '@mui/material/Badge';
  import { StoreContext } from '../../App';
+ import { useNavigate } from 'react-router-dom';
 const NavbarComponent = () => {
   const {cart,setCart,setshowCart,showCart} = React.useContext(StoreContext);  
-
+const navigate = useNavigate();
   function addToCart()
   {
     setshowCart(!showCart);
+  }
+  function navigateToLogin()
+  {
+    navigate("/login");
+
   }
   return (
    
@@ -38,7 +44,7 @@ const NavbarComponent = () => {
             <NavDropdown.Item href="#action/3.3" className={styles.navLink}>Wallets</NavDropdown.Item>
           </NavDropdown>
           <SearchIcon className={styles.SearchIcon}/>
-          <SearchPerson  className={styles.SearchPerson}/>
+          <SearchPerson  onClick={navigateToLogin} className={styles.SearchPerson}/>
           <ShoppingBagIcon onClick={addToCart} className={styles.ShoppingBagIcon}> 
           </ShoppingBagIcon>
           <span className={styles.badge}>{cart}</span>

@@ -1,6 +1,5 @@
 import React from 'react'
 import {useNavigate, BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 import { useState,useEffect } from 'react';
 import { client } from '../../lib/client';
 import Product from '../Product/Product';
