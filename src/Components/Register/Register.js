@@ -2,19 +2,22 @@ import React from 'react'
 import styles from "./index.module.css"
 import {useNavigate}  from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios';
 const Register = () => {
 
  const [error,setError]=useState();
 const navigate = useNavigate();
-function preventDefault(event)
+ function preventDefault(event)
  {
-   event.preventDefault();
+  alert("no")
+
+   event.preventDefault()
    navigate("/login");
  }
-    function registerUser(event)
+    async function registerUser(event)
     {
       event.preventDefault();
-      setError("register user failed");
+       setError("Register failed");
        
     }
   return (

@@ -7,6 +7,8 @@ import {useNavigate, BrowserRouter as Router, Route, Link } from "react-router-d
 import Productpage from '../ProductPage/Productpage';
 import { useState } from 'react';
 const Product = (props) => {
+
+  
   const delay = ms => new Promise(
     resolve => setTimeout(resolve, ms)
   );

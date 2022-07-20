@@ -21,7 +21,8 @@ const Cart = (props) => {
         <span onClick={closeCart} className={styles.closeButton}><CloseIcon/></span>
 
     </div>
-          <CardProduct/>
+        
+           {/* <CardProduct/> */}
        <div className={styles.totalPrice}>
             <h1>Total: $40.00{props.Subtotal}</h1>
        </div>
