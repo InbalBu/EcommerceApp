@@ -22,10 +22,10 @@ const CardProduct = (props) => {
   return (
     <div>
 <div className={styles.productContainer}>
-            <img className={styles.img} src={shoes2} alt=""/>            
-            <h5>Nike Airforce{props.title}</h5>
+            <img className={styles.img} src={props.img} alt=""/>            
+            <h5>{props.title}</h5>
             <p>Size: {props.size}</p>
-            <h4>$40{props.price}</h4>
+            <h4>${props.price}</h4>
      </div>
 
         <div className={styles.quantity}>

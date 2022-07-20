@@ -6,12 +6,11 @@ import styles from './product.module.css'
 import {useNavigate, BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Productpage from '../ProductPage/Productpage';
 import { useState } from 'react';
+import Cart from '../Cart/Cart'
+
 const Product = (props) => {
 
   
-  const delay = ms => new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
   const[product,setProduct]=useState({});
     function moveToProductPage(event) 
   {
@@ -21,7 +20,8 @@ const Product = (props) => {
       "title":props.title,
       "img":props.Img,
       "price":props.price,
-      "desc":props.desc
+      "desc":props.desc,
+      "size":props.size
     })    
       props.moveToProductPage(product);
   }

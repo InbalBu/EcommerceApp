@@ -24,9 +24,7 @@ function App() {
      <Route path="/product" element={ <Productpage/> } />  
      <Route path="/register" element={ <RegisterPage/> } />  
      <Route path="/login" element={ <LoginPage/> } />  
-
      </Routes>
-     
     </StoreContext.Provider>
 
   </div>

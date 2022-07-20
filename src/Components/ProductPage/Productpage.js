@@ -5,37 +5,59 @@ import Footer from '../Footer/Footer'
 import SinglePageProduct from "./SinglePageProduct.js"
 import shoes2 from './shoes2.jpg'
 import { StoreContext } from '../../App';
+import {useState} from 'react';
 import {useLocation}  from 'react-router-dom'
+import Cart from '../Cart/Cart'
+
 const Productpage = () => {
 
-  
   const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
-
+  const [qty, setQty] = useState(1);
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState(0);
 
   const location =useLocation();
 
+  function increaseQty()
+  {
+     setQty(qty + 1);
+  }
+  
+  function decceaseQty ()
+   {
+      setQty(qty - 1);
+    }
+  function addSize(size)
+  {
+    setSize(size);
+  }
+
   function addToCart()
 {
-  setCart([
-    ...cart,
-    {
+   setCart([
+     ...cart,
+     {
         name: `${location.state.name}`,
-        id:"10",
+         id:"10",
         price:`${location.state.price}`,
-        quantity:`${location.state.quantity}`,
-    }
-]);
-alert(JSON.stringify(cart));
+         quantity:`${qty}`,
+         img:`${location.state.img}`,
+         size: `${size}`,
+     }
+ ]);
 }
   return (
     <div>
         <NavbarComponent/>
+        <Cart/>
        <SinglePageProduct
+        increaseQty={increaseQty}
+        decceaseQty={decceaseQty}
         img={location.state.img}
         alt ="single product"
         title={location.state.name}
         price={`$${location.state.price}`}
-        size="38 39 40 41 42"
+         addSize={addSize}
         quantity="1"
         addToCart={addToCart}
        />
