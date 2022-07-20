@@ -5,7 +5,10 @@
      height: 600px;
      float: left;
 }
-
+.sizeOn:active
+{
+     background-color: black;
+}
 .header h1 {
      font-size: 55px;
      justify-content: start;
@@ -50,6 +53,11 @@
      margin: 5px;
      cursor: pointer;
 
+}
+
+.size li:active {
+     background-color: black;
+     color: white;
 }
 
 li:hover {
@@ -151,7 +159,7 @@ align-items: center;
 #collpase button:focus {outline:0;}
 
 .text {
-     text-align: start;
+     text-align: end;
      margin-top: 20px;
      margin-bottom: 20px;
      margin-right: 20px;

@@ -22,7 +22,7 @@ const Cart = (props) => {
 
     </div>
         
-           {/* <CardProduct/> */}
+      {cart&&cart.map((cartItem)=><CardProduct img={cartItem.img} title={cartItem.name} size={cartItem.size}  price={cartItem.price}/>)}  
        <div className={styles.totalPrice}>
             <h1>Total: $40.00{props.Subtotal}</h1>
        </div>

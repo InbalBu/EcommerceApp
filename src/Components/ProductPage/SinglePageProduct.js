@@ -5,11 +5,11 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import  { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { StoreContext } from '../../App';
-
 import Collapse from 'react-bootstrap/Collapse';
 const SinglePageProduct = (props) => {
 
   const [qty, setQty] = useState(1);
+  const [size, setSize] = useState(0);
   const [open, setOpen] = useState(false);
   const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
 
@@ -21,13 +21,19 @@ const SinglePageProduct = (props) => {
   function increaseQty()
     {
        setQty(qty + 1);
+       props.increaseQty();
     }
     
   function decceaseQty()
      {
          setQty(qty - 1);
+         props.decceaseQty();
      }
 
+function addSize(event)
+{
+  props.addSize((Number(event.target.innerHTML)));
+}
 
 
   return (
@@ -46,7 +52,7 @@ const SinglePageProduct = (props) => {
         </div>
             <div className={styles.size}>
                 <span>Size</span>
-                <ul>
+                <ul onClick={addSize}>
                     <li>39</li>
                     <li>40</li>
                     <li>41</li>

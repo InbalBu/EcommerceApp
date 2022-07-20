@@ -2,6 +2,8 @@ import React from 'react'
 import styles from "./index.module.css"
 import {useNavigate}  from 'react-router-dom';
 import { useState } from 'react';
+import Cart from '../Cart/Cart'
+
 import axios from 'axios';
 const Register = () => {
 

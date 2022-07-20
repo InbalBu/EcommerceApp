@@ -7,6 +7,7 @@
      width:25%;
      position: fixed;
      height: 100vh;
+     overflow: scroll;
     background-color: white;
     transition: top 300ms ease 0s !important;
  }
@@ -38,28 +39,27 @@
 .productContainer h5 {
     font-weight: bold;
     font-size: 18px;
-    text-align: center;
+    text-align: start;
     margin-top: -70px;
-    margin-left: 50px;
+    margin-left: 120px;
 }
 .productContainer p {
     margin-top: -5px;
     font-weight: bold;
-    margin-left: -25px;
+    margin-left: -70px;
 }
 
 .productContainer img {
     height: 40%;
     width: 30%;
     display: flex;
-    margin-left: 25px;
     margin-top: 40px;
    
 }
 
 .productContainer h4 {
     margin-top: -10px;
-    margin-left: -30px;
+    margin-left: -70px;
     font-size: 15px;
     font-weight: 700;
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import styles from "./index.module.css";
 import { GoogleLogin } from 'react-google-login';
 import { useNavigate } from 'react-router-dom';
+import Cart from '../Cart/Cart'
+
 const LoginComponent = () => {
 
 const navigate = useNavigate();
