@@ -3,6 +3,22 @@ import styles from './Cart.module.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import shoes2 from './shoes2.jpg';
 const CardProduct = (props) => {
+
+  const [cartItems, setCartItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [qty, setQty] = useState(1);
+
+  function increaseQty()
+    {
+       setQty(qty + 1);
+    }
+    
+  function decceaseQty()
+     {
+         setQty(qty - 1);
+     }
+  
+
   return (
     <div>
 <div className={styles.productContainer}>
@@ -13,12 +29,12 @@ const CardProduct = (props) => {
      </div>
 
         <div className={styles.quantity}>
-            <button className={styles.plusBtn}>+</button>
-                <p>1</p>
-            <button className={styles.minusBtn}>-</button>
+            <button className={styles.plusBtn} onClick={increaseQty}>+</button>
+                <p>{qty}</p>
+            <button className={styles.minusBtn} onClick={decceaseQty}>-</button>
        </div>
        <div className={styles.removeItem}>
-            <DeleteIcon/>
+            <DeleteIcon onClick={props.removeItem}/>
        </div>
 
     </div>

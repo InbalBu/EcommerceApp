@@ -8,8 +8,25 @@ import { StoreContext } from '../../App';
 import {useLocation}  from 'react-router-dom'
 const Productpage = () => {
 
+  
+  const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
+
+
   const location =useLocation();
 
+  function addToCart()
+{
+  setCart([
+    ...cart,
+    {
+        name: `${location.state.name}`,
+        id:"10",
+        price:`${location.state.price}`,
+        quantity:`${location.state.quantity}`,
+    }
+]);
+alert(JSON.stringify(cart));
+}
   return (
     <div>
         <NavbarComponent/>
@@ -20,6 +37,7 @@ const Productpage = () => {
         price={`$${location.state.price}`}
         size="38 39 40 41 42"
         quantity="1"
+        addToCart={addToCart}
        />
         <Newsletter/>
         <Footer/>

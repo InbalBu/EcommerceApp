@@ -4,9 +4,31 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import  { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import { StoreContext } from '../../App';
+
 import Collapse from 'react-bootstrap/Collapse';
 const SinglePageProduct = (props) => {
-    const [open, setOpen] = useState(false);
+
+  const [qty, setQty] = useState(1);
+  const [open, setOpen] = useState(false);
+  const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
+
+  function addToCart()
+  {
+     props.addToCart();
+
+  }
+  function increaseQty()
+    {
+       setQty(qty + 1);
+    }
+    
+  function decceaseQty()
+     {
+         setQty(qty - 1);
+     }
+
+
 
   return (
    <div>
@@ -37,13 +59,13 @@ const SinglePageProduct = (props) => {
 
               <div className={styles.quantityDiv}>
                  <div className={styles.quantity}>
-                    <button className={styles.plusBtn}>+</button>
-                    <p>1</p>
-                    <button className={styles.minusBtn}>-</button>
+                    <button className={styles.plusBtn} onClick={increaseQty}>+</button>
+                    <p>{qty}</p>
+                    <button className={styles.minusBtn} onClick={decceaseQty}>-</button>
                  </div>
                 <div className={styles.add}>
                     <button>
-                        <ShoppingBagIcon className={styles.shopIcon}/>
+                        <ShoppingBagIcon  onClick={addToCart} className={styles.shopIcon}/>
                         Add to basket
                     </button>
                 </div>

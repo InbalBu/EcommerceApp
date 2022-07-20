@@ -47,7 +47,7 @@ const navigate = useNavigate();
           <SearchPerson  onClick={navigateToLogin} className={styles.SearchPerson}/>
           <ShoppingBagIcon onClick={addToCart} className={styles.ShoppingBagIcon}> 
           </ShoppingBagIcon>
-          <span className={styles.badge}>{cart}</span>
+          <span className={styles.badge}>{cart.length}</span>
 
 
           </Nav>

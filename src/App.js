@@ -13,7 +13,7 @@ export const StoreContext = React.createContext();
 
 function App() {
 
- const [cart,setCart]=useState(1);
+ const [cart,setCart]=useState([]);
  const [showCart,setshowCart]=useState(false);
 
   return (
