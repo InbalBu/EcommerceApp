@@ -2,23 +2,35 @@ import {React, useState } from 'react'
 import styles from './Cart.module.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import shoes2 from './shoes2.jpg';
+import { StoreContext } from '../../App';
+import {useContext} from 'react'
 const CardProduct = (props) => {
 
+    const {cart,setCart,subtotal,setSubtotal} = useContext(StoreContext)
   const [cartItems, setCartItems] = useState([]);
-  const [subtotal, setSubtotal] = useState(0);
   const [qty, setQty] = useState(1);
 
   function increaseQty()
     {
-       setQty(qty + 1);
+      setQty(qty + 1);
+       setSubtotal(subtotal+(Number(props.price)));
     }
     
   function decceaseQty()
      {
-         setQty(qty - 1);
+      if(qty===1)
+      {
+        setQty(1);
+        setSubtotal(subtotal);
+      }
+      else
+      {
+        setQty(qty - 1);
+      setSubtotal(subtotal-(props.price));
+
+      } 
      }
   
-
   return (
     <div>
 <div className={styles.productContainer}>

@@ -27,7 +27,7 @@ const Product = (props) => {
   }
   
   return (
-    <Card style={{ width: '18rem', "marginTop":"15px" ,"marginLeft":"10%", "marginButtom":"100px" }}>
+    <Card style={{ width: '18rem', "marginTop":"50px" ,"marginLeft":"10%", "marginButtom":"100px" }}>
     <Card.Img 
        src={props.Img}
      />

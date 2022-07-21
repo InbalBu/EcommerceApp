@@ -4,6 +4,7 @@
 	background-color:#1368f1 ;
 	height: 140px;
 	display: flex;
+	margin-top: 50px;
 }
 .Discound_Div
 {
@@ -43,6 +44,7 @@
 	padding: 10px;
 	height: 45px;
 	background-color: transparent;
+	color: white;
 }
 Form input::placeholder
 {
