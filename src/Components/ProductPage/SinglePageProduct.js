@@ -11,12 +11,11 @@ const SinglePageProduct = (props) => {
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState(0);
   const [open, setOpen] = useState(false);
-  const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
+  const {cart, setCart,setshowCart,showCart, subtotal, setSubtotal} = React.useContext(StoreContext); 
 
   function addToCart()
   {
      props.addToCart();
-
   }
   function increaseQty()
     {

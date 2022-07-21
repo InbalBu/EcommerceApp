@@ -7,13 +7,13 @@ import { StoreContext } from '../../App';
 import CloseIcon from '@mui/icons-material/Close';
 const Cart = (props) => {
 
-    const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
+
+    const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
   function closeCart()
   {
      setshowCart(false);
   }
     return (
-     
    <div style={{ visibility: showCart ? "visible" : "hidden" }}
    className={styles.cartContainer}>
     <div className={styles.cart}>
@@ -22,9 +22,9 @@ const Cart = (props) => {
 
     </div>
         
-      {cart&&cart.map((cartItem)=><CardProduct img={cartItem.img} title={cartItem.name} size={cartItem.size}  price={cartItem.price}/>)}  
+      {cart&&cart.map((cartItem)=><StoreContext.Provider value={{cart,setCart,subtotal,setSubtotal}}> <CardProduct img={cartItem.img} title={cartItem.name} size={cartItem.size}  price={cartItem.price}/></StoreContext.Provider> )}  
        <div className={styles.totalPrice}>
-            <h1>Total: $40.00{props.Subtotal}</h1>
+            <h1>Total:${subtotal}</h1>
        </div>
 
        <div className={styles.checkout}>

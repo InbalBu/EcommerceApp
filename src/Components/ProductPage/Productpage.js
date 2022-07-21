@@ -11,7 +11,7 @@ import Cart from '../Cart/Cart'
 
 const Productpage = () => {
 
-  const {cart, setCart,setshowCart,showCart} = React.useContext(StoreContext); 
+  const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState(0);
@@ -26,6 +26,7 @@ const Productpage = () => {
   function decceaseQty ()
    {
       setQty(qty - 1);
+
     }
   function addSize(size)
   {
@@ -45,6 +46,7 @@ const Productpage = () => {
          size: `${size}`,
      }
  ]);
+ setSubtotal(subtotal+(qty*location.state.price));
 }
   return (
     <div>

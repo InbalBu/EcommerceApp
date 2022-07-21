@@ -10,7 +10,9 @@ const Featured = () => {
 
    function moveToProductPage(singleProduct)
   {
+    {singleProduct.title&&window.scrollTo(0,0)}
      {singleProduct.title&&navigate("/product",{state:{name:singleProduct.title,price:singleProduct.price,img:singleProduct.img}});}
+
   }
   //#region SetProductss
   const [products,setProducts]=useState();
