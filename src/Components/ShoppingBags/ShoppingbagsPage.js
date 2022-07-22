@@ -6,25 +6,24 @@ import { useState,useEffect } from 'react';
 import { client } from '../../lib/client';
 import { Grid } from '@mui/material';
 import Product from '../Product/Product';
-import styles from './sneakers.module.css'
+import styles from './index.module.css'
 import {useNavigate, BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const SneakersPage = () => {
+
+const ShoppingbagsPage = () => {
   
-  const navigate =useNavigate();
+    const navigate =useNavigate();
+    
+  function moveToProductPage(singleProduct)
+  {
+     {singleProduct.title&&navigate("/product",{state:{name:singleProduct.title,price:singleProduct.price,img:singleProduct.img}});}
 
-  
-function moveToProductPage(singleProduct)
-{
-   {singleProduct.title&&navigate("/product",{state:{name:singleProduct.title,price:singleProduct.price,img:singleProduct.img}});}
-}
+  }
 
-
-
-  const [products,setProducts]=useState();
+const [products,setProducts]=useState();
   useEffect(() => {
     const getProducts = async () => {   
-     const query= `*[_type == "sneakers"] {
+     const query= `*[_type == "shoppingBag"] {
         name,
         price,
         details,
@@ -42,20 +41,17 @@ function moveToProductPage(singleProduct)
     getProducts();
   }, [])
 
-
-
-
   return (
     <div>
     <NavbarComponent/>
-    <h1>Sneakers</h1>
+    <h1>Shopping Bags</h1>
     <Grid 
      alignItems="center"
     justify="center" 
     textAlign="center"
     style={{ minHeight: "100vh" }}
     container>
-    {products&&Array.from(products).map((singleProduct) =><Grid className={styles.grid} item xs={12}  md={6} lg={3}><Product moveToProductPage={moveToProductPage}  price={singleProduct.price} Img={singleProduct.image.asset.url} key={singleProduct.title} title={singleProduct.name}/></Grid>)}
+    {products&&Array.from(products).map((singleProduct) =><Grid className={styles.grid} item xs={12}  md={6} lg={4}><Product visibility="hidden" moveToProductPage={moveToProductPage}  price={singleProduct.price} Img={singleProduct.image.asset.url} key={singleProduct.title} title={singleProduct.name}/></Grid>)}
     </Grid>
     <Newsletter/>
     <Footer/>
@@ -63,4 +59,4 @@ function moveToProductPage(singleProduct)
   )
 }
 
-export default SneakersPage
+export default ShoppingbagsPage

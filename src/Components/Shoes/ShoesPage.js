@@ -24,7 +24,7 @@ function moveToProductPage(singleProduct)
   const [products,setProducts]=useState();
   useEffect(() => {
     const getProducts = async () => {   
-     const query= `*[_type == "sneakers"] {
+     const query= `*[_type == "shoes"] {
         name,
         price,
         details,
