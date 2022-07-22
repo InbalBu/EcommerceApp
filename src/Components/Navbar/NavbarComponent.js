@@ -29,17 +29,17 @@ const navigate = useNavigate();
     
 <Navbar className={styles.meauto} expand="lg">
       <Container>
-        <Navbar.Brand className={styles.logo} href="/">Shoe Store</Navbar.Brand>
+        <Navbar.Brand as={Link}   className={styles.logo} to="/">Shoe Store</Navbar.Brand>
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse  id="basic-navbar-nav">
         <div className={styles.overflow}>
           <Nav className='nav'>
-          <Nav.Link  as={Link} className={styles.navLink}  to="/">Sales</Nav.Link>
+          <Nav.Link  as={Link} className={styles.navLink}  to="/sales">Sales</Nav.Link>
             <Nav.Link  as={Link}  className={styles.navLink} to="/sneakers">Sneakers</Nav.Link>
             <Nav.Link  as={Link} className={styles.navLink} to="/shoes">Shoes</Nav.Link>
             <NavDropdown className={styles.navLink} title="Accesories" id="basic-nav-dropdown">
-            <NavDropdown.Item  className={styles.navLink} href="#action/3.1">Backpack</NavDropdown.Item>
-            <NavDropdown.Item className={styles.navLink} href="#action/3.2">
+            <NavDropdown.Item as={Link}  className={styles.navLink} to="/backpacks">Backpack</NavDropdown.Item>
+            <NavDropdown.Item as={Link} className={styles.navLink} to="/shopingbags">
               Shoppers Bags
             </NavDropdown.Item>
             <NavDropdown.Item  as={Link} to="/wallets" className={styles.navLink}>Wallets</NavDropdown.Item>

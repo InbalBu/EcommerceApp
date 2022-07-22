@@ -4,4 +4,7 @@ import LoginPage from "../Components/Login/LoginPage"
 import SneakersPage from "../Components/Sneakers/SneakersPage"
 import ShoesPage from "../Components/Shoes/ShoesPage"
 import WalletPage from "../Components/Wallets/WalletsPage"
-export {WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage} 
+import BackpackPage from "../Components/Backpack/BackpackPage"
+import ShoppingBagsPage from "../Components/ShoppingBags/ShoppingbagsPage"
+import SalesPage from "../Components/Sales/SalesPage"
+export {SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage} 

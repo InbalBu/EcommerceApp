@@ -11,8 +11,7 @@ import Cart from '../Cart/Cart'
 
 const Productpage = () => {
 
-  const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
-  const [qty, setQty] = useState(1);
+  const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal,qty, setQty} = React.useContext(StoreContext); 
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState(0);
 
@@ -39,7 +38,7 @@ const Productpage = () => {
      ...cart,
      {
         name: `${location.state.name}`,
-         id:"10",
+        id:cart.length,
         price:`${location.state.price}`,
          quantity:`${qty}`,
          img:`${location.state.img}`,

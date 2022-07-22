@@ -32,7 +32,7 @@ const Product = (props) => {
        src={props.Img}
      />
     <Card.Body className={styles.cardBody}>
-        <Card.Text className={styles.sizes}> <span>36</span> <span>37</span> <span>38</span> <span>39</span> <span>40</span> <span>41</span> <span>42</span> <span>43</span> <br/> <span>44</span> <span>45</span> <span>46</span> <span>47</span> </Card.Text>
+        <Card.Text style={{visibility: `${props.visibility}`}} className={styles.sizes}> <span>36</span> <span>37</span> <span>38</span> <span>39</span> <span>40</span> <span>41</span> <span>42</span> <span>43</span> <br/> <span>44</span> <span>45</span> <span>46</span> <span>47</span> </Card.Text>
       <div className={styles.details}>
       <div  className={styles.leftdiv}>
       <Card.Title className={styles.productHeader}>{props.title}</Card.Title>
