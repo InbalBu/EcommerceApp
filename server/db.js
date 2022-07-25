@@ -6,7 +6,7 @@ module.exports=()=>{
         useUnifiedTopology:true
     }   
     try {
-        mongoose.connect("mongodb+srv://inbalniv22:123456789in@cluster0.ztjb8.mongodb.net/?retryWrites=true&w=majority",connectionParams);
+        mongoose.connect(process.env.DB_NIV,connectionParams);
         console.log("connected to mongo");   
     } catch (error) {
         console.log(error);

@@ -1,13 +1,11 @@
 const {User,validate} = require("../models/user");
-const router =require("express").Router();
 const bcrypt =require("bcrypt");
-const { json } = require('express');
 
 module.exports=async(req,res)=>
 {
  try {
     const {error} = validate(req.body);
-    if (error) return res.status(400).send({message: error.detailes[0].message});
+    if (error) return res.status(400).send({message: error.details[0].message});
     
     const user = await User.findOne({email: req.body.email});
     if (user) res.status(400).send({message: "User already exists"});
