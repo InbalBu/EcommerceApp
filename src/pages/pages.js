@@ -7,4 +7,5 @@ import WalletPage from "../Components/Wallets/WalletsPage"
 import BackpackPage from "../Components/Backpack/BackpackPage"
 import ShoppingBagsPage from "../Components/ShoppingBags/ShoppingbagsPage"
 import SalesPage from "../Components/Sales/SalesPage"
-export {SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage} 
+import Pay from "../Components/Checkout/Pay"
+export {Pay,SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage} 

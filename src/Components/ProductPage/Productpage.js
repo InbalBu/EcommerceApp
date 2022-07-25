@@ -29,6 +29,7 @@ const Productpage = () => {
     }
   function addSize(size)
   {
+    
     setSize(size);
   }
 
@@ -37,9 +38,9 @@ const Productpage = () => {
    setCart([
      ...cart,
      {
-        name: `${location.state.name}`,
-        id:cart.length,
-        price:`${location.state.price}`,
+         name: `${location.state.name}`,
+         id:cart.length,
+         price:`${location.state.price}`,
          quantity:`${qty}`,
          img:`${location.state.img}`,
          size: `${size}`,

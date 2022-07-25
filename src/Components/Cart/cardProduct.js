@@ -33,8 +33,12 @@ const CardProduct = (props) => {
       }
       else
       {
+        Array.from(cart).map((item)=>{
+          if(item.id == props.id)item.quantity =Number(item.quantity)-1;
+          }
+          )
         setQty(qty - 1);
-      setSubtotal(subtotal-(props.price));
+       setSubtotal(subtotal-(props.price));
 
       } 
      }
