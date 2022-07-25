@@ -2,7 +2,7 @@ import './App.css';
 import React from "react";
 import { useState } from 'react';
 import Productpage from './Components/ProductPage/Productpage';
-import {SalesPage,ShoppingBagsPage,Homepage,RegisterPage,LoginPage,ShoesPage,SneakersPage,WalletPage,BackpackPage} from "../src/pages/pages";
+import {Pay,SalesPage,ShoppingBagsPage,Homepage,RegisterPage,LoginPage,ShoesPage,SneakersPage,WalletPage,BackpackPage} from "../src/pages/pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Routes,
@@ -12,10 +12,12 @@ export const StoreContext = React.createContext(); // to show on all app
 
 function App() {
 
+//#region constants
 const [subtotal, setSubtotal] =useState(0);
  const [cart,setCart]=useState([]);
  const [showCart,setshowCart]=useState(false);
  const [qty, setQty] = useState(1);
+//#endregion
 
   return (
     <div className="App">
@@ -29,6 +31,7 @@ const [subtotal, setSubtotal] =useState(0);
      <Route path="/backpacks" element={ <BackpackPage/> } />  
      <Route path="/shopingbags" element={ <ShoppingBagsPage/>} />  
      <Route path="/sales" element={ <SalesPage/>} />  
+     <Route path="/payment" element={ <Pay/> } />  
 
      <Route path="/register" element={ <RegisterPage/> } />  
      <Route path="/login" element={ <LoginPage/> } />  

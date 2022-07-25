@@ -31,6 +31,7 @@ const SinglePageProduct = (props) => {
 
 function addSize(event)
 {
+  event.preventDefault();
   props.addSize((Number(event.target.innerHTML)));
 }
 
@@ -52,13 +53,12 @@ function addSize(event)
             <div className={styles.size}>
                 <span>Size</span>
                 <ul onClick={addSize}>
-                    <li>39</li>
-                    <li>40</li>
-                    <li>41</li>
-                    <li>42</li>
-                    <li>43</li>
-                    <li>44</li>
-                    <li>45</li>
+                  <button className={styles.btnprimary}>39</button>
+                  <button className={styles.btnprimary}>40</button>
+                  <button className={styles.btnprimary}>41</button>
+                  <button className={styles.btnprimary}>42</button>
+                  <button className={styles.btnprimary}>43</button>
+                  <button className={styles.btnprimary}>44</button>
                 </ul>
                 </div>
 
