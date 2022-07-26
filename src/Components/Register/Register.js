@@ -6,9 +6,10 @@ import Cart from '../Cart/Cart'
 
 import axios from 'axios';
 const Register = () => {
-
+// const [user,setUser] =useState();
  const [error,setError]=useState();
 const navigate = useNavigate();
+
  function preventDefault(event)
  {
   alert("no")
@@ -16,11 +17,13 @@ const navigate = useNavigate();
    event.preventDefault()
    navigate("/login");
  }
+
+
     async function registerUser(event)
     {
       event.preventDefault();
-       setError("Register failed");
-       
+      // const response = await axios.post("http://localhost:8080/register",user);
+      setError("Register failed");  
     }
   return (
     <div className={styles.Container}>
