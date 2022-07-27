@@ -8,4 +8,5 @@ import BackpackPage from "../Components/Backpack/BackpackPage"
 import ShoppingBagsPage from "../Components/ShoppingBags/ShoppingbagsPage"
 import SalesPage from "../Components/Sales/SalesPage"
 import Pay from "../Components/Checkout/Pay"
-export {Pay,SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage} 
+import ResetPassword from "../Components/ResetPass/ResetPassword"
+export {Pay,SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage, ResetPassword} 

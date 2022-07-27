@@ -10,33 +10,39 @@
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     /* background-color: #f8f9fd; */
 }
-.error
-{
-    color: red;
-    font-size: 18px;
-    
-}
+
 .Form h1 {
     font-weight: bold;
     margin-bottom: 50px;
     margin-top: -80px;
     
 }
+.registerUserName
+{
+    margin-left: 10%;
+    margin-right: auto;
 
-.LoginUserEmail {
+    text-align: start;
+    display: start;
+}
+.registerUserName input
+{
+    margin-left: 35px;
+}
+.registerUserEmail {
     margin-left: 10%;
     margin-right: auto;
     text-align: start;
     display: start;
 }
-.LoginUserEmail input
+.registerUserEmail input
  {
     margin-left: 37px;
     
 }
 
 
-.LoginUserPassword {
+.registerUserPassword {
     margin-left: 10%;
     margin-right: auto;
     text-align: start;
@@ -44,13 +50,13 @@
 
 }
 
-.LoginUserName p {
+.registerUserName p {
     display: inline-flex;
     margin-right: 20px;
     font-size: 24px;
 }
 
-.LoginUserPassword p {
+.registerUserPassword p {
     display: inline-flex;
     margin-right: 20px;
     font-size: 24px;
@@ -60,16 +66,21 @@
 
 }
 
-.LoginUserEmail p {
+.registerUserEmail p {
     display: inline-flex;
     margin-right: 20px;
     font-size: 24px;
-
 }
 
+.error
+{
+    color: red;
+    font-size: 18px;
+    
+}
 .btn {
     margin-left: 30px;
-    margin-top: 80px;
+    margin-top: 40px;
     background-color: black;
     color: #fff;
     border: none;
@@ -91,7 +102,14 @@
     margin-right: auto;
 }
 
+.notSignedUp {
+    padding-top: -30px;
+}
+
 .notSignedUp a{
     color: black;
+    
 }
+
+
 

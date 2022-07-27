@@ -1,8 +1,9 @@
 import './App.css';
 import React from "react";
+import Profile from './Components/ProfilePage/Profile';
 import { useState } from 'react';
 import Productpage from './Components/ProductPage/Productpage';
-import {Pay,SalesPage,ShoppingBagsPage,Homepage,RegisterPage,LoginPage,ShoesPage,SneakersPage,WalletPage,BackpackPage} from "../src/pages/pages";
+import {Pay,SalesPage,ShoppingBagsPage,Homepage,RegisterPage,LoginPage,ShoesPage,SneakersPage,WalletPage,BackpackPage, ResetPassword} from "../src/pages/pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Routes,
@@ -17,11 +18,14 @@ const [subtotal, setSubtotal] =useState(0);
  const [cart,setCart]=useState([]);
  const [showCart,setshowCart]=useState(false);
  const [qty, setQty] = useState(1);
+ const[isLogged,setIsLogged] = useState(false);
+ const [user,setUser] =useState({ email:"",
+ password:""});
 //#endregion
 
   return (
     <div className="App">
-    <StoreContext.Provider value={{subtotal, setSubtotal,cart,setCart,showCart,setshowCart, qty, setQty}}>
+    <StoreContext.Provider value={{subtotal, setSubtotal,cart,setCart,showCart,setshowCart, qty, setQty, user,setUser,isLogged,setIsLogged}}>
     <Routes>
     <Route path="/" element={ <Homepage/> } /> 
      <Route path="/product" element={ <Productpage/> } />  
@@ -32,9 +36,11 @@ const [subtotal, setSubtotal] =useState(0);
      <Route path="/shopingbags" element={ <ShoppingBagsPage/>} />  
      <Route path="/sales" element={ <SalesPage/>} />  
      <Route path="/payment" element={ <Pay/> } />  
-
      <Route path="/register" element={ <RegisterPage/> } />  
-     <Route path="/login" element={ <LoginPage/> } />  
+     <Route path="/login" element={ <LoginPage/> } /> 
+     <Route path="/Profile" element={ <Profile/> } />  
+     <Route path="/Reset" element={ <ResetPassword/> } />  
+
      </Routes>
     </StoreContext.Provider>
 
