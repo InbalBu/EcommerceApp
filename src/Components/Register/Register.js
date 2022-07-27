@@ -3,27 +3,47 @@ import styles from "./index.module.css"
 import {useNavigate}  from 'react-router-dom';
 import { useState } from 'react';
 import Cart from '../Cart/Cart'
-
 import axios from 'axios';
+
 const Register = () => {
-// const [user,setUser] =useState();
+  
+ const [user,setUser] =useState(
+  {
+    name:"",
+    email:"",
+    password:""
+  }
+ );
+ const handleChange = ({ currentTarget: input }) => {
+  setUser({ ...user, [input.name]: input.value });
+};
  const [error,setError]=useState();
 const navigate = useNavigate();
 
  function preventDefault(event)
  {
-  alert("no")
 
    event.preventDefault()
    navigate("/login");
  }
 
 
-    async function registerUser(event)
+    async function registerUser(e)
     {
-      event.preventDefault();
-      // const response = await axios.post("http://localhost:8080/register",user);
-      setError("Register failed");  
+      e.preventDefault();
+      try {
+         const url = "http://localhost:8080/api/register";
+         const res = await axios.post(url, user);
+         console.log(res);
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+        ) {
+          setError(error.response.data.message);
+        }
+      }      
     }
   return (
     <div className={styles.Container}>
@@ -31,15 +51,15 @@ const navigate = useNavigate();
         <h1>Create an account</h1>
     <div className={styles.registerUserName}>
         <p>Name:</p>
-     <input name='name' type="text"/>
+     <input name='name' onChange={handleChange}  type="text"/>
     </div>
     <div className={styles.registerUserEmail}>
         <p>Email:</p>
-    <input name='email' type="text"/>
+    <input name='email' type="text" onChange={handleChange}/>
      </div>
      <div className={styles.registerUserPassword}>
          <p>Password:</p>
-     <input name='password' type="password"/>
+     <input name='password' onChange={handleChange}  type="password"/>
     </div>
     {error&&<div className={styles.error}>{error}</div>}
     <button className={styles.btn} type="submit">Sign Up</button>

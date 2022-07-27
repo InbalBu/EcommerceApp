@@ -45,14 +45,14 @@ const [products,setProducts]=useState();
   return (
     <div>
     <NavbarComponent/>
-    <h1>Wallets</h1>
+    <h1 className={styles.header}>Wallets</h1>
     <Grid 
      alignItems="center"
     justify="center" 
     textAlign="center"
     style={{ minHeight: "100vh" }}
     container>
-    {products&&Array.from(products).map((singleProduct) =><Grid className={styles.grid} item xs={12}  md={6} lg={4}><Product visibility="hidden" moveToProductPage={moveToProductPage}  price={singleProduct.price} Img={singleProduct.image.asset.url} key={singleProduct.title} title={singleProduct.name}/></Grid>)}
+    {products&&Array.from(products).map((singleProduct) =><Grid align="center" className={styles.grid} item xs={12}  md={6} lg={4}><Product visibility="hidden" moveToProductPage={moveToProductPage}  price={singleProduct.price} Img={singleProduct.image.asset.url} key={singleProduct.title} title={singleProduct.name}/></Grid>)}
     </Grid>
     <Newsletter/>
     <Footer/>

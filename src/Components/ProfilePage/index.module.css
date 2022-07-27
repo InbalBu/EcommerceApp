@@ -1,0 +1,29 @@
+.container {
+    max-width: 50%;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    margin-top: 8%;
+    
+}
+.img
+{
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+}
+
+.name {
+    font-weight: 700;
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+.email {
+    margin-top: 20px;
+}
+
+.good {
+    font-size: 20px;
+    font-weight: 500;
+}

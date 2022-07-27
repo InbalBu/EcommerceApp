@@ -13,7 +13,7 @@ import Badge from '@mui/material/Badge';
  import { StoreContext } from '../../App';
  import { useNavigate} from 'react-router-dom';
 const NavbarComponent = () => {
-  const {cart,setCart,setshowCart,showCart} = React.useContext(StoreContext);  
+  const {isLogged,cart,setCart,setshowCart,showCart, user, setUser} = React.useContext(StoreContext);  
 const navigate = useNavigate();
   function addToCart()
   {
@@ -21,7 +21,8 @@ const navigate = useNavigate();
   }
   function navigateToLogin()
   {
-    navigate("/login");
+    if(isLogged) navigate("/Profile");
+    else navigate("/login");
 
   }
   return (
@@ -38,11 +39,11 @@ const navigate = useNavigate();
             <Nav.Link  as={Link}  className={styles.navLink} to="/sneakers">Sneakers</Nav.Link>
             <Nav.Link  as={Link} className={styles.navLink} to="/shoes">Shoes</Nav.Link>
             <NavDropdown className={styles.navLink} title="Accesories" id="basic-nav-dropdown">
-            <NavDropdown.Item as={Link}  className={styles.navLink} to="/backpacks">Backpack</NavDropdown.Item>
-            <NavDropdown.Item as={Link} className={styles.navLink} to="/shopingbags">
+            <NavDropdown.Item as={Link}  className={styles.navLink} to="/backpacks" id={styles.dropDown}>Backpack</NavDropdown.Item>
+            <NavDropdown.Item as={Link} className={styles.navLink} to="/shopingbags" id={styles.dropDown}>
               Shoppers Bags
             </NavDropdown.Item>
-            <NavDropdown.Item  as={Link} to="/wallets" className={styles.navLink}>Wallets</NavDropdown.Item>
+            <NavDropdown.Item  as={Link} to="/wallets" className={styles.navLink} id={styles.dropDown}>Wallets</NavDropdown.Item>
           </NavDropdown>
           <SearchIcon className={styles.SearchIcon}/>
           <SearchPerson  onClick={navigateToLogin} className={styles.SearchPerson}/>

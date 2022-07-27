@@ -39,6 +39,16 @@
     color: black !important;
 }
 
+#dropDown {
+    width: 200px;
+}
+
+#dropDown:hover {
+    transition: 0.2s ease-in;
+    color:gray !important;
+    background-color: transparent;
+}
+
 .logo {
     font-size: 30px !important;
     font-weight: 400;
