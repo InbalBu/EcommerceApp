@@ -17,7 +17,6 @@ function App() {
 const [subtotal, setSubtotal] =useState(0);
  const [cart,setCart]=useState([]);
  const [showCart,setshowCart]=useState(false);
- const [qty, setQty] = useState(1);
  const[isLogged,setIsLogged] = useState(false);
  const [user,setUser] =useState({ email:"",
  password:""});
@@ -25,7 +24,7 @@ const [subtotal, setSubtotal] =useState(0);
 
   return (
     <div className="App">
-    <StoreContext.Provider value={{subtotal, setSubtotal,cart,setCart,showCart,setshowCart, qty, setQty, user,setUser,isLogged,setIsLogged}}>
+    <StoreContext.Provider value={{subtotal, setSubtotal,cart,setCart,showCart,setshowCart, user,setUser,isLogged,setIsLogged}}>
     <Routes>
     <Route path="/" element={ <Homepage/> } /> 
      <Route path="/product" element={ <Productpage/> } />  

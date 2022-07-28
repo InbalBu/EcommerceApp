@@ -6,8 +6,10 @@ import { StoreContext } from '../../App';
 import {useContext} from 'react'
 const CardProduct = (props) => {
 
-    const {cart,setCart,subtotal,setSubtotal,qty, setQty} = useContext(StoreContext)
+    const {cart,setCart,subtotal,setSubtotal} = useContext(StoreContext)
   const [cartItems, setCartItems] = useState([]);
+
+  const [qty, setQty] = useState(1);
 
    function removeItem()
    {
@@ -16,12 +18,14 @@ const CardProduct = (props) => {
 
   function increaseQty()
     {
-       setQty(qty + 1);
+         setQty(qty + 1);
        Array.from(cart).map((item)=>{
        if(item.id == props.id)item.quantity =Number(item.quantity)+1;
        }
        )
        setSubtotal(subtotal+(Number(props.price)));
+       localStorage.setItem("cart",JSON.stringify(cart));
+       localStorage.setItem("subtotal",JSON.stringify(subtotal));
     }
     
   function decceaseQty()
@@ -33,13 +37,14 @@ const CardProduct = (props) => {
       }
       else
       {
+        setQty(props.qty - 1);
         Array.from(cart).map((item)=>{
           if(item.id == props.id)item.quantity =Number(item.quantity)-1;
           }
-          )
-        setQty(qty - 1);
+          ) 
        setSubtotal(subtotal-(props.price));
-
+       localStorage.setItem("cart",JSON.stringify(cart))
+       localStorage.setItem("subtotal",JSON.stringify(subtotal));   
       } 
      }
   
@@ -54,7 +59,7 @@ const CardProduct = (props) => {
 
         <div className={styles.quantity}>
             <button className={styles.plusBtn} onClick={increaseQty}>+</button>
-                <p>{qty}</p>
+                <p>{props.qty}</p>
             <button className={styles.minusBtn} onClick={decceaseQty}>-</button>
        </div>
        <div className={styles.removeItem}>

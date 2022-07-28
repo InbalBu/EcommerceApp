@@ -11,15 +11,18 @@ import Cart from '../Cart/Cart'
 
 const Productpage = () => {
 
-  const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal,qty, setQty} = React.useContext(StoreContext); 
+  const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState(0);
+
+  const [qty, setQty] = useState(1);
 
   const location =useLocation();
 
   function increaseQty()
   {
      setQty(qty + 1);
+
   }
   
   function decceaseQty ()
@@ -47,6 +50,7 @@ const Productpage = () => {
      }
  ]);
  setSubtotal(subtotal+(qty*location.state.price));
+ localStorage.setItem("cart",JSON.stringify(cart));
 }
   return (
     <div>
