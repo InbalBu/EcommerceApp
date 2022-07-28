@@ -2,6 +2,8 @@ import React from 'react'
 import NavbarComponent from '../Navbar/NavbarComponent'
 import Footer from "../Footer/Footer.js"
 import Newsletter from '../Newsletter/Newsletter.js'
+import Cart from '../Cart/Cart.js'
+
 import { useState,useEffect } from 'react';
 import { client } from '../../lib/client';
 import { Grid } from '@mui/material';
@@ -47,6 +49,7 @@ function moveToProductPage(singleProduct)
 
   return (
     <div>
+      <Cart/>
     <NavbarComponent/>
     <h1 className={styles.header}>Sneakers</h1>
     <Grid 
