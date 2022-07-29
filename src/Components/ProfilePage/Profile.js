@@ -3,13 +3,28 @@ import NavbarComponent from '../Navbar/NavbarComponent'
 import Footer from "../Footer/Footer.js"
 import Newsletter from '../Newsletter/Newsletter.js'
 import styles from "./index.module.css"
-import  useEffect  from 'react';
+import  {useEffect,useCallback}  from 'react';
 import { StoreContext } from '../../App';
 import profileImg from "./profile-r.png";
 import { useContext,useState } from 'react';
 const Profile = () => {
-const {user, setUser} = useContext(StoreContext);
+
+
+const {user, setUser} = useContext(StoreContext); //useContext of user globaly
+
+   
   const[currentTime,setCurrentTime] = useState( new Date().toDateString());
+
+  //#region SaveUserOnRefresh
+
+  const addTodo = useCallback(() => {
+     setUser(JSON.parse(localStorage.getItem('user')));
+  }, [user]);
+
+   useEffect(() => {
+    addTodo();
+   }, [addTodo])
+   //#endregion SaveUserOnRefresh
   return (
 
     <div>

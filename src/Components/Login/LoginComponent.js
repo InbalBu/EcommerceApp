@@ -38,6 +38,7 @@ const navigate = useNavigate();
          const currentUser= res.data.user;
          setUser(currentUser);
          setIsLogged(true);
+         localStorage.setItem("user",JSON.stringify(currentUser));
          navigate("/");
         } catch (error) {
         if (
