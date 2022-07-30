@@ -5,24 +5,29 @@ import Footer from '../Footer/Footer'
 import SinglePageProduct from "./SinglePageProduct.js"
 import shoes2 from './shoes2.jpg'
 import { StoreContext } from '../../App';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {useLocation}  from 'react-router-dom'
 import Cart from '../Cart/Cart'
 
 const Productpage = () => {
+ 
 
   const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState(0);
 
-  const [qty, setQty] = useState(1);
+  useEffect(() => {
+    if(Array.from(cart).length===0) setCart(JSON.parse(localStorage.getItem('cart')));
+    else localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
+  
+  const [qty, setQty] = useState(1);
   const location =useLocation();
 
   function increaseQty()
   {
      setQty(qty + 1);
-
   }
   
   function decceaseQty ()
@@ -36,7 +41,7 @@ const Productpage = () => {
     setSize(size);
   }
 
-  function addToCart()
+  function addToCart(subtotalcart)
 {
    setCart([
      ...cart,
@@ -47,10 +52,10 @@ const Productpage = () => {
          quantity:`${qty}`,
          img:`${location.state.img}`,
          size: `${size}`,
+         subtotal:subtotalcart,
      }
  ]);
- setSubtotal(subtotal+(qty*location.state.price));
- localStorage.setItem("cart",JSON.stringify(cart));
+ 
 }
   return (
     <div>
@@ -62,7 +67,7 @@ const Productpage = () => {
         img={location.state.img}
         alt ="single product"
         title={location.state.name}
-        price={`$${location.state.price}`}
+        price={`${location.state.price}`}
          addSize={addSize}
         quantity="1"
         addToCart={addToCart}

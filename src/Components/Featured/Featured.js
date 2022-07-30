@@ -5,6 +5,7 @@ import { client } from '../../lib/client';
 import Product from '../Product/Product';
 import { Grid } from '@mui/material';
 import styles from './index.module.css'
+
 const Featured = () => {
   const navigate =useNavigate();
 

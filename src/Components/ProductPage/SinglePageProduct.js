@@ -5,6 +5,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import  { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { StoreContext } from '../../App';
+
 import Collapse from 'react-bootstrap/Collapse';
 const SinglePageProduct = (props) => {
 
@@ -13,9 +14,11 @@ const SinglePageProduct = (props) => {
   const [open, setOpen] = useState(false);
   const {cart, setCart,setshowCart,showCart, subtotal, setSubtotal} = React.useContext(StoreContext); 
 
-  function addToCart()
+   function addToCart()
   {
-     props.addToCart();
+    
+      setSubtotal(Number(subtotal)+(Number(qty)*Number(props.price)));
+      props.addToCart(Number(subtotal)+(Number(qty)*Number(props.price)));
   }
   function increaseQty()
     {
@@ -69,7 +72,7 @@ function addSize(event)
                     <button className={styles.minusBtn} onClick={decceaseQty}>-</button>
                  </div>
                 <div className={styles.add}>
-                    <button>
+                    <button onClick={addToCart}>
                         <ShoppingBagIcon  onClick={addToCart} className={styles.shopIcon}/>
                         Add to basket
                     </button>
