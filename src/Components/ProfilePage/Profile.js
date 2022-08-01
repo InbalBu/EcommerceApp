@@ -7,23 +7,39 @@ import  {useEffect,useCallback}  from 'react';
 import { StoreContext } from '../../App';
 import profileImg from "./profile-r.png";
 import { useContext,useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const Profile = () => {
 
 
-const {user, setUser} = useContext(StoreContext); //useContext of user globaly
+const {user, setUser,setIsLogged} = useContext(StoreContext); //useContext of user globaly
 
    
   const[currentTime,setCurrentTime] = useState( new Date().toDateString());
+  const [profilePicture, setProfilePicture] = useState();
+  const navigate = useNavigate();
+
+
 
   //#region SaveUserOnRefresh
 
-  const addTodo = useCallback(() => {
-     setUser(JSON.parse(localStorage.getItem('user')));
-  }, [user]);
+  const logOut = () => {
+    setIsLogged(false);
+    localStorage.removeItem('user');
+    setUser({});
+    navigate("/");
+  }
+ 
+  const setLoggedUser = () => {
+    setUser(JSON.parse(localStorage.getItem('user')));
+  };
 
-   useEffect(() => {
-    addTodo();
-   }, [addTodo])
+  useEffect(() => {
+    setLoggedUser();
+    if(user)setIsLogged(true);
+    else setLoggedUser(false);
+  }, setLoggedUser);
+
    //#endregion SaveUserOnRefresh
   return (
 
@@ -33,18 +49,21 @@ const {user, setUser} = useContext(StoreContext); //useContext of user globaly
            
 
         <div>
-            <img className={styles.img} src={profileImg} alt="profile" />
+            {user.profilePicture?<img className={styles.img} src={user.profilePicture} alt="profile" />:<img className={styles.img} src={profilePicture} alt="profile" />}
         </div>
         
         <div>
-        <h1 className={styles.name}>Welcome, {user.name} </h1>
+        <h1  className={styles.name}>Welcome, {user.name} </h1>
         </div>
 
         <div>
         <p className={styles.email}>Your Email: {user.email}</p>
         <p className={styles.date}>{currentTime} </p>
         <p className={styles.good}>Have a Good Day! Enjoy your shopping.</p>
+        </div>
 
+        <div>
+          <button className={styles.logout} onClick={logOut}>Logout</button>
         </div>
 
     </div>

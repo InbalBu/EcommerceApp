@@ -18,6 +18,7 @@ export default {
             title: 'Password',
             type: 'string'
         },
+       
     ]
    
 }

@@ -48,7 +48,7 @@ const Featured = () => {
     textAlign="center"
     style={{ minHeight: "100vh" }}
     container>
-    {products&&Array.from(products).filter((singleProduct, index) => index < 4).map((singleProduct) =><Grid  align="center" className={styles.grid} item xs={12}  md={6} lg={3}><Product moveToProductPage={moveToProductPage}   price={singleProduct.price} Img={singleProduct.image.asset.url} key={singleProduct.title} title={singleProduct.name}/></Grid>)}
+    {products&&Array.from(products).filter((singleProduct, index) => index < 4).map((singleProduct,index) =><Grid  key={index}   align="center" className={styles.grid} item xs={12}  md={6} lg={3}><Product moveToProductPage={moveToProductPage}   price={singleProduct.price} Img={singleProduct.image.asset.url} key={index} title={singleProduct.name}/></Grid>)}
     </Grid>
     </div>
   )

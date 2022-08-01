@@ -21,7 +21,8 @@ const Cart = (props) => {
   const local = useCallback(() => {
    setCart(JSON.parse(localStorage.getItem('cart') || '[]'));
     cart.map((cartItem,index)=><StoreContext.Provider value={{cart,setCart,subtotal,setSubtotal}}> <CardProduct  img={cartItem.img} qty={cartItem.quantity}  id={index} title={cartItem.name}  size={cartItem.size} removeItem={removeItem} price={cartItem.price}/></StoreContext.Provider> )
-    setSubtotal(JSON.parse(localStorage.getItem('subtotal')));
+     const localCart=Array.from(JSON.parse(localStorage.getItem('cart')));
+    setSubtotal(Number(localCart[localCart.length-1].subtotal));
   }, []);
 
      useEffect(() => 
@@ -46,13 +47,13 @@ const Cart = (props) => {
 
     </div>
         
-      {cart&&cart.map((cartItem,index)=><StoreContext.Provider value={{cart,setCart,subtotal,setSubtotal}}> <CardProduct  img={cartItem.img} qty={cartItem.quantity}  id={index} title={cartItem.name}  size={cartItem.size} removeItem={removeItem} price={cartItem.price}/></StoreContext.Provider> )}  
+      {cart&&cart.map((cartItem,index)=><StoreContext.Provider key={index}  value={{cart,setCart,subtotal,setSubtotal}}> <CardProduct  img={cartItem.img} qty={cartItem.quantity}  key={index} id={index} title={cartItem.name}  size={cartItem.size} removeItem={removeItem} price={cartItem.price}/></StoreContext.Provider> )}  
        <div className={styles.totalPrice}>
             <h1>Total:${subtotal}</h1>
        </div>
 
        <div className={styles.checkout}>
-            <button >Checkout</button>
+            <button>Checkout</button>
        </div>
 
     </div>

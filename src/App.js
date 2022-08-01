@@ -36,7 +36,7 @@ const [subtotal, setSubtotal] =useState(0);
      <Route path="/backpacks" element={ <BackpackPage/> } />  
      <Route path="/shopingbags" element={ <ShoppingBagsPage/>} />  
      <Route path="/sales" element={ <SalesPage/>} />  
-     <Route path="/payment" element={ <Pay/> } />  
+     <Route path="/Pay" element={ <Pay/> } />  
      <Route path="/register" element={ <RegisterPage/> } />  
      <Route path="/login" element={ <LoginPage/> } /> 
      <Route path="/Profile" element={ <Profile/> } />  
