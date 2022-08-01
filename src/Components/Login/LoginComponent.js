@@ -14,6 +14,7 @@ const LoginComponent = () => {
     {
       email :"",
       password:"",
+      profilePicture: ""
     } 
 
   );

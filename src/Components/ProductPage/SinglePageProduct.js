@@ -15,8 +15,7 @@ const SinglePageProduct = (props) => {
   const {cart, setCart,setshowCart,showCart, subtotal, setSubtotal} = React.useContext(StoreContext); 
 
    function addToCart()
-  {
-    
+  { 
       setSubtotal(Number(subtotal)+(Number(qty)*Number(props.price)));
       props.addToCart(Number(subtotal)+(Number(qty)*Number(props.price)));
   }

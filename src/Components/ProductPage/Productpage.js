@@ -17,7 +17,7 @@ const Productpage = () => {
   const [size, setSize] = useState(0);
 
   useEffect(() => {
-    if(Array.from(cart).length===0) setCart(JSON.parse(localStorage.getItem('cart')));
+    if(Array.from(cart)===[]) setCart(JSON.parse(localStorage.getItem('cart')));
     else localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 

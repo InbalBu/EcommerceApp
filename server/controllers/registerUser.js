@@ -8,7 +8,7 @@ module.exports=async(req,res)=>
     if (error) return res.status(400).send({message: error.details[0].message});
     
     const user = await User.findOne({email: req.body.email});
-    if (user) res.status(400).send({message: "User already exists"});
+    if (user) return res.status(400).send({message: "User already exists"});
     
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashPassword= await bcrypt.hash(req.body.password,salt);
