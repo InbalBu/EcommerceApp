@@ -1,4 +1,5 @@
 import React from 'react'
+import Search from '../Search/Search'
 import NavbarComponent from '../Navbar/NavbarComponent'
 import MyCarousel from './Carousel/MyCarousel.js'
 import Featured from '../Featured/Featured'
@@ -10,6 +11,7 @@ const Homepage = () => {
     <div>
     <NavbarComponent/>
     <Cart/>
+    <Search/>
     <MyCarousel/>
     <Featured/>
     <Newsletter/>

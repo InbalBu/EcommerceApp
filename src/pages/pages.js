@@ -9,4 +9,6 @@ import ShoppingBagsPage from "../Components/ShoppingBags/ShoppingbagsPage"
 import SalesPage from "../Components/Sales/SalesPage"
 import Pay from "../Components/Checkout/Pay"
 import ResetPassword from "../Components/ResetPass/ResetPassword"
-export {Pay,SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage, ResetPassword} 
+import Afterpay from "../Components/Afterpay/Afterpay"
+import Search from "../Components/Search/Search"
+export {Pay,SalesPage,ShoppingBagsPage,WalletPage,ShoesPage,SneakersPage,Homepage,RegisterPage,LoginPage,BackpackPage, ResetPassword, Afterpay, Search} 

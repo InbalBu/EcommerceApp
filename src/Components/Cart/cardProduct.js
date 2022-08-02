@@ -1,4 +1,4 @@
-import {React, useState } from 'react'
+import {React, useState,useEffect } from 'react'
 import styles from './Cart.module.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import shoes2 from './shoes2.jpg';
@@ -11,6 +11,18 @@ const CardProduct = (props) => {
 
   const [qty, setQty] = useState(1);
 
+
+  
+  // useEffect(() => {
+
+  //   if(Array.from(cart)===[]) 
+  //   {
+  //     const localCart=Array.from(JSON.parse(localStorage.getItem('cart')));
+  //     setSubtotal(Number(localCart[localCart.length-1].subtotal));
+  //     setCart(JSON.parse(localStorage.getItem('cart')));
+  //    }
+  //   else localStorage.setItem('cart', JSON.stringify(cart));
+  // }, [cart]);
    function removeItem()
    {
     props.removeItem(props.id);
@@ -18,14 +30,18 @@ const CardProduct = (props) => {
 
   function increaseQty()
     {
+      
          setQty(qty + 1);
-       Array.from(cart).map((item)=>{
-       if(item.id == props.id)item.quantity =Number(item.quantity)+1;
+      setCart(JSON.parse(Array.from(cart).map((item)=>{
+       if(item.id == props.id)
+       {
+        item.quantity =Number(item.quantity)+1;
+        item.subtotal+=Number(item.price);
        }
-       )
+       }
+       )));
        setSubtotal(subtotal+(Number(props.price)));
-       localStorage.setItem("cart",JSON.stringify(cart));
-       localStorage.setItem("subtotal",JSON.stringify(subtotal));
+      //  localStorage.setItem("cart",JSON.stringify(cart));
     }
     
   function decceaseQty()
@@ -38,13 +54,16 @@ const CardProduct = (props) => {
       else
       {
         setQty(props.qty - 1);
-        Array.from(cart).map((item)=>{
-          if(item.id == props.id)item.quantity =Number(item.quantity)-1;
+          Array.from(cart).map((item)=>{
+          if(item.id == props.id)
+          {
+            item.quantity =Number(item.quantity)-1;
+            item.subtotal-=Number(item.price);
+          }
           }
           ) 
-       setSubtotal(subtotal-(props.price));
-       localStorage.setItem("cart",JSON.stringify(cart))
-       localStorage.setItem("subtotal",JSON.stringify(subtotal));   
+          setSubtotal(subtotal-(props.price));
+        //  localStorage.setItem("cart",JSON.stringify(cart))
       } 
      }
   

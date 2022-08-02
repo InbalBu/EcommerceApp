@@ -1,0 +1,29 @@
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.header {
+    color: #2cdf1f;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left:-15px;
+    font-weight: 700;
+    margin-top: -50px;
+}
+
+.p{
+    font-size:20px;
+
+}
+
+.icon {
+    font-size: 100px;
+}
