@@ -18,25 +18,12 @@ const Cart = (props) => {
   }
 
 
-  const local = useCallback(() => {
-   setCart(JSON.parse(localStorage.getItem('cart') || '[]'));
-    cart.map((cartItem,index)=><StoreContext.Provider value={{cart,setCart,subtotal,setSubtotal}}> <CardProduct  img={cartItem.img} qty={cartItem.quantity}  id={index} title={cartItem.name}  size={cartItem.size} removeItem={removeItem} price={cartItem.price}/></StoreContext.Provider> )
-     const localCart=Array.from(JSON.parse(localStorage.getItem('cart')));
-    setSubtotal(Number(localCart[localCart.length-1].subtotal));
-  }, []);
-
-     useEffect(() => 
-     {
-      local();
-     }, [local])
-
  function removeItem(id)
 {   
   setCart(Array.from(cart).filter((item, index) =>  {
   setSubtotal(subtotal-(Number(item.price * item.quantity)));
    return Number(id) !== Number(index)
   } ));
-  localStorage.setItem("cart",JSON.stringify(cart));
 }
     return (
    <div style={{ visibility: showCart ? "visible" : "hidden" }}

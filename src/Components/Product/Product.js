@@ -8,9 +8,8 @@ import Productpage from '../ProductPage/Productpage';
 import { useState } from 'react';
 import Cart from '../Cart/Cart'
 
-const Product = (props) => {
 
-  
+const Product = (props) => {
   const[product,setProduct]=useState({});
     function moveToProductPage(event) 
   {
@@ -25,7 +24,8 @@ const Product = (props) => {
     })    
       props.moveToProductPage(product);
   }
-  
+
+
   return (
     <Card style={{ width: '18rem', "marginTop":"50px" ,"marginLeft":"10%", "marginButtom":"100px" }}>
     <Card.Img 

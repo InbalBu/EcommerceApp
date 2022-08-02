@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,22 +12,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Badge from '@mui/material/Badge';
  import { StoreContext } from '../../App';
  import { useNavigate} from 'react-router-dom';
+import Product from '../Product/Product';
 const NavbarComponent = () => {
-  const {isLogged,cart,setCart,setshowCart,showCart, user, setUser} = React.useContext(StoreContext);  
+  const {showSearchPage,setShowSearchPage,isLogged,cart,setCart,setshowCart,showCart, user, setUser} = React.useContext(StoreContext);  
 const navigate = useNavigate();
-  function addToCart()
+  function showCartClick()
   {
     setshowCart(!showCart);
   }
+
+  function showSearchPageClick()
+  {
+    setShowSearchPage(!showSearchPage);
+  }
   function navigateToLogin()
   {
-    if(isLogged) navigate("/Profile");
+    if(isLogged) navigate("/P rofile");
     else navigate("/login");
 
   }
+
+
+
   return (
-   
-    
 <Navbar className={styles.meauto} expand="lg">
       <Container>
         <Navbar.Brand as={Link}   className={styles.logo} to="/">Shoe Store</Navbar.Brand>
@@ -45,9 +52,9 @@ const navigate = useNavigate();
             </NavDropdown.Item>
             <NavDropdown.Item  as={Link} to="/wallets" className={styles.navLink} id={styles.dropDown}>Wallets</NavDropdown.Item>
           </NavDropdown>
-          <SearchIcon className={styles.SearchIcon}/>
+          <SearchIcon onClick={showSearchPageClick} className={styles.SearchIcon}/>
           <SearchPerson  onClick={navigateToLogin} className={styles.SearchPerson}/>
-          <ShoppingBagIcon onClick={addToCart} className={styles.ShoppingBagIcon}> 
+          <ShoppingBagIcon onClick={showCartClick} className={styles.ShoppingBagIcon}> 
           </ShoppingBagIcon>
           <span className={styles.badge}>{cart.length}</span>
 
