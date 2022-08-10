@@ -21,9 +21,9 @@ const Pay = () => {
      
       <div>
         <NavbarComponent/>
+        <Cart/>
         <h1 className={styles.header}>Get started</h1>
         <p className={styles.p}>Click here to pay</p>
-        <p>Total payment: $54</p>
         <PayPalScriptProvider className={styles.container} options={{"client-id": "Af9QBN13FSgam_kbBCmGsMph5cxnQBnSUwa0l9Xjxdz7p_7kd98p7OMt6Y3C9Oh1j7lhXsqdNv-ofaiz"}}>
           <PayPalButtons className={styles.btn}
             createOrder={(data, actions) => {
@@ -32,7 +32,7 @@ const Pay = () => {
                   {
                     
                     amount: {
-                      value: 107, // just demo 
+                      value: `${localStorage.getItem('subtotal')}`, // just demo 
                     },
                     "payment_preferences": {
                       "auto_bill_outstanding": true,

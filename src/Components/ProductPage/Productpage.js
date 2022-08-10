@@ -15,12 +15,6 @@ const Productpage = () => {
   const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState(0);
-
-  useEffect(() => {
-    if(Array.from(cart)===[]) setCart(JSON.parse(localStorage.getItem('cart')));
-    else localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
-
   
   const [qty, setQty] = useState(1);
   const location =useLocation();
@@ -52,7 +46,7 @@ const Productpage = () => {
          quantity:`${qty}`,
          img:`${location.state.img}`,
          size: `${size}`,
-         subtotal:subtotalcart,
+         subtotal:`${subtotal}`,
      }
  ]);
  
