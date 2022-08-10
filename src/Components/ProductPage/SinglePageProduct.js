@@ -17,7 +17,7 @@ const SinglePageProduct = (props) => {
    function addToCart()
   { 
       setSubtotal(Number(subtotal)+(Number(qty)*Number(props.price)));
-      props.addToCart(Number(subtotal)+(Number(qty)*Number(props.price)));
+      props.addToCart();
   }
   function increaseQty()
     {

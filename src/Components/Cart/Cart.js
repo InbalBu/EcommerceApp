@@ -5,18 +5,21 @@ import shoes2 from './shoes2.jpg'
 import CardProduct from './cardProduct';
 import { StoreContext } from '../../App';
 import CloseIcon from '@mui/icons-material/Close';
+import { Navigate, useNavigate } from 'react-router-dom';
 const Cart = (props) => {
 
     const {cart, setCart,setshowCart,showCart,subtotal, setSubtotal} = React.useContext(StoreContext); 
-  
     const [qty, setQty] = useState(1);
+    const navigate = useNavigate();  
 
-  
     function closeCart()
   {
      setshowCart(false);
   }
 
+  function moveToPay() {
+    navigate("/Pay");
+  }
 
  function removeItem(id)
 {   
@@ -40,7 +43,7 @@ const Cart = (props) => {
        </div>
 
        <div className={styles.checkout}>
-            <button>Checkout</button>
+            <button onClick={moveToPay}>Checkout</button>
        </div>
 
     </div>

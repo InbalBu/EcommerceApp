@@ -15,19 +15,31 @@ export const StoreContext = React.createContext(); // to show on all app
 function App() {
 
 //#region constants
+
 const [subtotal, setSubtotal] =useState(0);
  const [cart,setCart]=useState([]);
  const [showCart,setshowCart]=useState(false);
  const [showSearchPage,setShowSearchPage]=useState(false);
+  
+//  useEffect(() => {
+//     if ( cart.length !== 0 ) window.localStorage.setItem('cart', JSON.stringify(cart));
+// }, [cart]);
+
+// useEffect(() => {
+//   const data = window.localStorage.getItem('cart');
+//   if ( data !== "[]" ) setCart(JSON.parse(data))  
+// }, []);
+
+useEffect(() => {
+  localStorage.setItem('subtotal', JSON.stringify(subtotal));
+}, [subtotal]);
+
+
 
  const[isLogged,setIsLogged] = useState(false);
  const [user,setUser] =useState({ email:"",
  password:""});
 //#endregion
-
-
-
-
   return (
     <div className="App">
     <StoreContext.Provider value={{showSearchPage,setShowSearchPage,subtotal, setSubtotal,cart,setCart,showCart,setshowCart, user,setUser,isLogged,setIsLogged}}>

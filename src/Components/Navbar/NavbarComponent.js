@@ -9,10 +9,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import SearchPerson from '@mui/icons-material/Person';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Badge from '@mui/material/Badge';
  import { StoreContext } from '../../App';
  import { useNavigate} from 'react-router-dom';
-import Product from '../Product/Product';
 const NavbarComponent = () => {
   const {showSearchPage,setShowSearchPage,isLogged,cart,setCart,setshowCart,showCart, user, setUser} = React.useContext(StoreContext);  
 const navigate = useNavigate();
@@ -27,7 +25,7 @@ const navigate = useNavigate();
   }
   function navigateToLogin()
   {
-    if(isLogged) navigate("/P rofile");
+    if(isLogged) navigate("/Profile");
     else navigate("/login");
 
   }
