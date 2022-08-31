@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-to start the app you will need to run npm start on the main folder, the ecommerceapp folder, and the server folder
+to start the app you will need to run  npm i --force on main folder and npm start on the main folder,  and npm start on the ecommerceapp folder, and the server folder
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
