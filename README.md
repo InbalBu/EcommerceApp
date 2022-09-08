@@ -2,8 +2,9 @@
 * Our Ecommerceapp with React, Node.js And Sanity Cms
 * co-creators -niv ben aviv and inbal buckris
 
-niv ben aviv git hub: https://github.com/Nivben190 
-inbal buckris git hub: https://github.com/InbalBu
+* niv ben aviv git hub: https://github.com/Nivben190 
+
+* inbal buckris git hub: https://github.com/InbalBu
 
 ## 📋 Features
   *  register and login to our ecommerce website with yourown profile image and contact 
