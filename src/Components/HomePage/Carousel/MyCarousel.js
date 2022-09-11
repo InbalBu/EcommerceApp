@@ -15,7 +15,7 @@ const MyCarousel = () => {
     <Carousel className={styles.Carousel}>
     <Carousel.Item className={styles.carouselItem}>
       <img 
-       width={900} height={650} 
+        width={900} height={650} 
         className="d-block w-100"
         src={shoes5}
         alt="First slide"
