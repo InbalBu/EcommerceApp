@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const bcrypt =require("bcrypt");
+=======
+const bcrypt =require("bcryptjs");
+>>>>>>> 5c25b9827f23b3325a9e7e7605fcc73850ad0148
 const Joi= require("joi");
 const{User}=require('../models/user')
 
